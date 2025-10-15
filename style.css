@@ -1,0 +1,148 @@
+body {
+    font-family: monospace;
+    margin: 40px;
+    background: white;
+    color: black;
+    max-width: 800px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: black;
+    color: white;
+}
+
+body.dark-mode a {
+    color: #66b3ff;
+}
+
+body.dark-mode a:visited {
+    color: #b19cd9;
+}
+
+body.dark-mode .filter-btn {
+    background: black;
+    color: white;
+    border-color: white;
+}
+
+body.dark-mode .filter-btn:hover {
+    background: white;
+    color: black;
+}
+
+body.dark-mode .filter-btn.active {
+    background: white;
+    color: black;
+}
+
+body.dark-mode #filters {
+    border-bottom-color: white;
+}
+
+body.dark-mode .source-tag {
+    color: #888;
+}
+
+body.dark-mode .timestamp {
+    color: #666;
+}
+
+
+body.dark-mode #dark-mode-toggle {
+    background: black;
+    color: white;
+    border-color: white;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background: white;
+    color: black;
+}
+
+/* Header layout */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+    font-family: monospace;
+    background: white;
+    border: 2px solid black;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#dark-mode-toggle:hover {
+    background: black;
+    color: white;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple;
+}
+
+/* Filter button styles */
+#filters {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+.filter-btn {
+    font-family: monospace;
+    background: white;
+    border: 2px solid black;
+    padding: 8px 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-btn:hover {
+    background: black;
+    color: white;
+}
+
+.filter-btn.active {
+    background: black;
+    color: white;
+}
+
+/* Headline styles */
+.headline {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.source-tag {
+    color: gray;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.timestamp {
+    color: #999;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.headline.hidden {
+    display: none;
+}
