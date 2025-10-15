@@ -1,2 +1,2 @@
 # Titulares
-Todos los titulares de noticias en español
+Todos los titulares de prensa en español
