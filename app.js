@@ -15,6 +15,7 @@ const feeds = [
 let currentFilter = 'all';
 const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes in milliseconds
 const AUTO_REFRESH_INTERVAL = 15 * 60 * 1000; // 15 minutes in milliseconds
+const FETCH_TIMEOUT = 8000; // 8 seconds timeout per feed
 
 // Format relative time (e.g., "2 hours ago")
 function getRelativeTime(timestamp) {
@@ -117,8 +118,32 @@ function displayHeadlines(headlinesData) {
     });
 }
 
+// Fetch a single feed with timeout
+async function fetchSingleFeed(feed) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
+
+    try {
+        const response = await fetch(
+            `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`,
+            { signal: controller.signal }
+        );
+        clearTimeout(timeoutId);
+        const data = await response.json();
+
+        return {
+            feed: feed,
+            items: data.items || []
+        };
+    } catch (error) {
+        clearTimeout(timeoutId);
+        console.error(`Error fetching ${feed.name}:`, error.name === 'AbortError' ? 'Timeout' : error);
+        return null;
+    }
+}
+
 async function fetchHeadlines(useCache = true) {
-    // Check cache first
+    // Check cache first and display immediately if available
     if (useCache && isCacheValid()) {
         console.log('Loading from cache...');
         const cachedData = loadFromCache();
@@ -129,23 +154,21 @@ async function fetchHeadlines(useCache = true) {
     }
 
     console.log('Fetching fresh data...');
-    const headlinesData = [];
+    
+    // Show loading indicator
+    const headlinesContainer = document.getElementById('headlines');
+    headlinesContainer.innerHTML = '<div class="loading">Cargando noticias...</div>';
 
-    for (const feed of feeds) {
-        try {
-            const response = await fetch(
-                `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`
-            );
-            const data = await response.json();
+    // Fetch all feeds in parallel
+    const feedPromises = feeds.map(feed => fetchSingleFeed(feed));
+    const results = await Promise.all(feedPromises);
 
-            headlinesData.push({
-                feed: feed,
-                items: data.items
-            });
+    // Filter out failed requests
+    const headlinesData = results.filter(result => result !== null);
 
-        } catch (error) {
-            console.error(`Error fetching ${feed.name}:`, error);
-        }
+    if (headlinesData.length === 0) {
+        headlinesContainer.innerHTML = '<div class="error">No se pudieron cargar las noticias. Intenta de nuevo más tarde.</div>';
+        return;
     }
 
     // Save to cache
