@@ -23,18 +23,18 @@ body {
 
 /* Headline styles */
 .headline {
-    margin-bottom: 15px;
+    margin-bottom: 1em;
     display: block;
 }
 
 .source-tag {
     color: gray;
-    margin-right: 10px;
+    margin-right: 0.6em;
 }
 
 .timestamp {
     color: gray;
-    margin-left: 10px;
+    margin-left: 0.6em;
 }
 
 .headline.hidden {
@@ -43,8 +43,8 @@ body {
 
 /* Filter button styles */
 #filters {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 2em;
+    padding-bottom: 1.5em;
     border-bottom: 2px solid black;
 }
 
@@ -71,9 +71,8 @@ button.active {
 #dark-mode-toggle {
     background: white;
     border: 2px solid black;
-    padding: 8px 16px;
+    padding: 0.5em;
     cursor: pointer;
-    font-size: 14px;
 }
 
 #dark-mode-toggle:hover {
@@ -131,7 +130,7 @@ body.dark-mode .source-tag {
 }
 
 body.dark-mode .timestamp {
-    color: #666;
+    color: #888;
 }
 
 
