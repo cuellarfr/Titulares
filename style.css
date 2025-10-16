@@ -28,12 +28,12 @@ body {
 }
 
 .source-tag {
-    color: gray;
+    color: #666;
     margin-right: 0.6em;
 }
 
 .timestamp {
-    color: gray;
+    color: #666;
     margin-left: 0.6em;
 }
 
