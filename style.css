@@ -1,9 +1,10 @@
 body {
     font-family: monospace;
-    margin: 40px;
+    margin: 0 auto;
+    padding: 2em;
     background: white;
     color: black;
-    max-width: 800px;
+    max-width: 60em;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -66,7 +67,7 @@ body.dark-mode #dark-mode-toggle:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
 }
 
 .header h1 {
