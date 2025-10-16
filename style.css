@@ -5,7 +5,7 @@ body {
     padding: 1.5em;
     background: white;
     color: black;
-    max-width: 52em;
+    max-width: 54em;
     transition: background-color 0.3s, color 0.3s;
 }
 
