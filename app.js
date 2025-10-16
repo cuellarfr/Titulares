@@ -208,9 +208,9 @@ function initDarkMode() {
     // Apply dark mode if needed
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
-        toggle.textContent = '☼ Light Mode';
+        toggle.textContent = '☼ Modo Claro';
     } else {
-        toggle.textContent = '◐ Dark Mode';
+        toggle.textContent = '◐ Modo Oscuro';
     }
 
     // Toggle dark mode on click
@@ -218,10 +218,10 @@ function initDarkMode() {
         document.body.classList.toggle('dark-mode');
 
         if (document.body.classList.contains('dark-mode')) {
-            toggle.textContent = '☼ Light Mode';
+            toggle.textContent = '☼ Modo Claro';
             localStorage.setItem('darkMode', 'enabled');
         } else {
-            toggle.textContent = '◐ Dark Mode';
+            toggle.textContent = '◐ Modo Oscuro';
             localStorage.setItem('darkMode', 'disabled');
         }
     });
@@ -232,10 +232,10 @@ function initDarkMode() {
         if (!localStorage.getItem('darkMode')) {
             if (e.matches) {
                 document.body.classList.add('dark-mode');
-                toggle.textContent = '☼ Light Mode';
+                toggle.textContent = '☼ Modo Claro';
             } else {
                 document.body.classList.remove('dark-mode');
-                toggle.textContent = '◐ Dark Mode';
+                toggle.textContent = '◐ Modo Oscuro';
             }
         }
     });
