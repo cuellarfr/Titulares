@@ -9,7 +9,7 @@ const feeds = [
     { name: 'ABC', url: 'https://www.abc.es/rss/2.0/portada/' },
     { name: 'El Español', url: 'https://www.elespanol.com/rss/' },
     { name: '20 Minutos', url: 'https://www.20minutos.es/rss/' },
-    { name: 'Huffington Post', url: 'https://www.huffingtonpost.es/feeds/index.xml' }
+    { name: 'Huff Post', url: 'https://www.huffingtonpost.es/feeds/index.xml' }
 ];
 
 let currentFilter = 'all';
