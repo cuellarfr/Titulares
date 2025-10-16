@@ -1,5 +1,6 @@
 body {
     font-family: Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
     margin: 0 auto;
     padding: 2em;
     background: white;
@@ -7,6 +8,91 @@ body {
     max-width: 50em;
     transition: background-color 0.3s, color 0.3s;
 }
+
+/* Header layout */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+/* Headline styles */
+.headline {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.source-tag {
+    color: gray;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.timestamp {
+    color: #999;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.headline.hidden {
+    display: none;
+}
+
+/* Filter button styles */
+#filters {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+button {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    background: white;
+    border: 2px solid black;
+    padding: 0.5em;
+    margin: 0 0.5em 0.5em 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+button.active {
+    background: black;
+    color: white;
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+    background: white;
+    border: 2px solid black;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#dark-mode-toggle:hover {
+    background: black;
+    color: white;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple;
+}
+
+
 
 /* Dark mode styles */
 body.dark-mode {
@@ -60,86 +146,4 @@ body.dark-mode #dark-mode-toggle {
 body.dark-mode #dark-mode-toggle:hover {
     background: white;
     color: black;
-}
-
-/* Header layout */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1em;
-}
-
-.header h1 {
-    margin: 0;
-}
-
-/* Dark mode toggle button */
-#dark-mode-toggle {
-    background: white;
-    border: 2px solid black;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-#dark-mode-toggle:hover {
-    background: black;
-    color: white;
-}
-
-a {
-    color: blue;
-    text-decoration: underline;
-}
-
-a:visited {
-    color: purple;
-}
-
-/* Filter button styles */
-#filters {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid black;
-}
-
-.filter-btn {
-    background: white;
-    border: 2px solid black;
-    padding: 0.5em;
-    margin: 0 0.5em 0.5em 0;
-    cursor: pointer;
-}
-
-.filter-btn:hover {
-    background: black;
-    color: white;
-}
-
-.filter-btn.active {
-    background: black;
-    color: white;
-}
-
-/* Headline styles */
-.headline {
-    margin-bottom: 15px;
-    display: block;
-}
-
-.source-tag {
-    color: gray;
-    font-size: 12px;
-    margin-right: 10px;
-}
-
-.timestamp {
-    color: #999;
-    font-size: 11px;
-    margin-left: 10px;
-}
-
-.headline.hidden {
-    display: none;
 }
