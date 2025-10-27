@@ -4,12 +4,10 @@ const feeds = [
     { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/ultimas-noticias/portada' },
     { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/rss/portada.xml' },
     { name: 'El Diario', url: 'https://www.eldiario.es/rss' },
-    { name: 'La Vanguardia', url: 'https://www.lavanguardia.com/rss/home.xml' },
     { name: 'El Periódico', url: 'https://www.elperiodico.com/es/cds/rss/?id=board.xml' },
     { name: 'ABC', url: 'https://www.abc.es/rss/2.0/portada/' },
     { name: 'El Español', url: 'https://www.elespanol.com/rss/' },
-    { name: '20 Minutos', url: 'https://www.20minutos.es/rss/' },
-    { name: 'Huff Post', url: 'https://www.huffingtonpost.es/feeds/index.xml' }
+    { name: '20 Minutos', url: 'https://www.20minutos.es/rss/' }
 ];
 
 let currentFilter = 'all';
